@@ -46,6 +46,7 @@ public class SocialSharing extends CordovaPlugin {
   private static final String ACTION_SHARE_VIA = "shareVia";
   private static final String ACTION_SHARE_VIA_TWITTER_EVENT = "shareViaTwitter";
   private static final String ACTION_SHARE_VIA_FACEBOOK_EVENT = "shareViaFacebook";
+  private static final String ACTION_SHARE_VIA_SHAREIT_EVENT = "shareViaShareit";
   private static final String ACTION_SHARE_VIA_FACEBOOK_WITH_PASTEMESSAGEHINT = "shareViaFacebookWithPasteMessageHint";
   private static final String ACTION_SHARE_VIA_WHATSAPP_EVENT = "shareViaWhatsApp";
   private static final String ACTION_SHARE_VIA_INSTAGRAM_EVENT = "shareViaInstagram";
@@ -84,6 +85,8 @@ public class SocialSharing extends CordovaPlugin {
       return doSendIntent(callbackContext, args.getString(0), args.getString(1), args.getJSONArray(2), args.getString(3), "twitter", null, false, true);
     } else if (ACTION_SHARE_VIA_FACEBOOK_EVENT.equals(action)) {
       return doSendIntent(callbackContext, args.getString(0), args.getString(1), args.getJSONArray(2), args.getString(3), "com.facebook.katana", null, false, true);
+    } else if (ACTION_SHARE_VIA_SHAREIT_EVENT.equals(action)) {
+      return doSendIntent(callbackContext, args.getString(0), args.getString(1), args.getJSONArray(2), args.getString(3), "com.lenovo.anyshare.gps", null, false, true);
     } else if (ACTION_SHARE_VIA_FACEBOOK_WITH_PASTEMESSAGEHINT.equals(action)) {
       this.pasteMessage = args.getString(4);
       return doSendIntent(callbackContext, args.getString(0), args.getString(1), args.getJSONArray(2), args.getString(3), "com.facebook.katana", null, false, true);
