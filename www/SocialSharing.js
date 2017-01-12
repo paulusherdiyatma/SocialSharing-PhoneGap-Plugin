@@ -46,6 +46,10 @@ SocialSharing.prototype.shareViaFacebook = function (message, fileOrFileArray, u
   cordova.exec(successCallback, this._getErrorCallback(errorCallback, "shareViaFacebook"), "SocialSharing", "shareViaFacebook", [message, null, this._asArray(fileOrFileArray), url]);
 };
 
+SocialSharing.prototype.shareViaShareit = function (message, fileOrFileArray, url, successCallback, errorCallback) {
+  cordova.exec(successCallback, this._getErrorCallback(errorCallback, "shareViaShareit"), "SocialSharing", "shareViaShareit", [message, null, this._asArray(fileOrFileArray), url]);
+};
+
 SocialSharing.prototype.shareViaFacebookWithPasteMessageHint = function (message, fileOrFileArray, url, pasteMessageHint, successCallback, errorCallback) {
   pasteMessageHint = pasteMessageHint || "If you like you can paste a message from your clipboard";
   cordova.exec(successCallback, this._getErrorCallback(errorCallback, "shareViaFacebookWithPasteMessageHint"), "SocialSharing", "shareViaFacebookWithPasteMessageHint", [message, null, this._asArray(fileOrFileArray), url, pasteMessageHint]);
